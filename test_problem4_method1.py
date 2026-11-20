@@ -254,7 +254,7 @@ def summarize(results, cases):
     vtimes = [r.get("total_virtual_s", 0) for r in results]
     runtimes = [r["runtime_s"] for r in results]
     measures = [r.get("measurements", 0) for r in results]
-    dists = [r.get("total_distance_m", 0) for r in results]
+    dists = [r.get("distance_m", 0) for r in results]  #结果里这个字段叫 distance_m，之前取错了名字，汇总里的平均距离一直是 0
 
     summary = {
         "cases": n,
